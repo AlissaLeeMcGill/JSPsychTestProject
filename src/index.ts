@@ -146,7 +146,7 @@ let _globalName_ = (function (jspsych) {
           //control
           control_point = interactive.control(this.line_start_X + this.line_length, this.line_start_Y);
       
-      constructor(jsPsych, ine_start_X1, line_start_Y1, unit_size1, number_Labels1, boundless_line1, start_label1, end_label1 ) {
+      constructor(jsPsych, line_start_X1, line_start_Y1, unit_size1, number_Labels1, boundless_line1, start_label1, end_label1 ) {
         this.jsPsych = jsPsych;
   
         this.line_start_X = line_start_X1;

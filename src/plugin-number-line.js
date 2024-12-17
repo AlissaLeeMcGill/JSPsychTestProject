@@ -1,3 +1,5 @@
+
+
 var jsPsychNumberLine = (function (jspsych) {
   "use strict";
 
@@ -167,7 +169,7 @@ var jsPsychNumberLine = (function (jspsych) {
    */
     }
 
-    trial(display_element, trial) {
+    /*trial(display_element, trial) {
       /*
       display_element.innerHTML = '<div id="jspsych-html-slider-response-stimulus">' + trial.stimulus + "</div>";
       // data saving
@@ -190,7 +192,7 @@ var jsPsychNumberLine = (function (jspsych) {
         total_adjust_time: 99,
         total_trial_time: 99, 
       }
-  */
+  
 
       const endTrial = () => {
      
@@ -198,6 +200,7 @@ var jsPsychNumberLine = (function (jspsych) {
     };
     endTrial();
   }
+  */
     startTrialTimer(){
       this.trial_start_time_ms = Date.now();
   }
@@ -303,7 +306,8 @@ var jsPsychNumberLine = (function (jspsych) {
       return this.numberline_value;
   }
 
-  main(){
+  //main(){
+    trial(display_element){
     let text = interactive.text(25, interactive.height - 25, "");
     function setInteractiveSize(height, width)
     {
@@ -313,6 +317,8 @@ var jsPsychNumberLine = (function (jspsych) {
     setInteractiveSize(500,1000);
 
     const numberline = new Numberline(100, 100,40, NumberLabels.START_AND_END, true, 10, 20);
+    //numberline.main();
+
     numberline.baseline.x2 = numberline.line_start_X + numberline.line_length;
     //numberline.setTargetNumber(33);
     numberline.generateTargetNumber();
@@ -386,6 +392,12 @@ var jsPsychNumberLine = (function (jspsych) {
     text.update();
     text.addDependency(numberline.line);
     //# sourceMappingURL=svg-line.js.map
+
+    const endTrial = () => {
+     
+      this.jsPsych.finishTrial(trial_data);
+  };
+  endTrial();
   }
 
 
